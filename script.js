@@ -1,34 +1,33 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var hasLowerCaseLetters = document.getElementById("lcchar").checked;
-var hasUpperCaseLetters = document.getElementById("ucchar").checked;
-var hasNumbers = document.getElementById("nchar").checked;
-var hasSpecialCharacters = document.getElementById("spchar").checked;
-let characters = "";
+
 
 // Write password to the #password input
 function writePassword() {
-  
+  //Boolean if check box is checked or not
+  var hasLowerCaseLetters = document.getElementById("lcchar").checked;
+  var hasUpperCaseLetters = document.getElementById("ucchar").checked;
+  var hasNumbers = document.getElementById("nchar").checked;
+  var hasSpecialCharacters = document.getElementById("spchar").checked;
+//strings containing possible characters
   var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbers = "0123456789";
   var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
   let passwordLength = 0;
- 
+  let characters = "";
   passwordLength = document.getElementById("pwleng").value;
-    console.log(passwordLength)
+    //limits password length
   if (passwordLength < 8 || passwordLength > 128) {
       window.alert("Password length must be 8-128 characters in length")
+      return;
   } 
-  console.log(hasLowerCaseLetters);
-  console.log(hasUpperCaseLetters);
-  console.log(hasNumbers);
-  console.log(hasSpecialCharacters);
-  console.log(lowerCaseLetters[15])
+  //ends if none are selected
   if (!hasLowerCaseLetters && !hasNumbers && !hasSpecialCharacters && !hasUpperCaseLetters) {
     return;
   }
+  //adds possible characters
   if (hasLowerCaseLetters) {
     characters += lowerCaseLetters
   } if (hasUpperCaseLetters) {
@@ -38,8 +37,8 @@ function writePassword() {
   } if (hasSpecialCharacters) {
     characters += specialCharacters
   }
-  console.log(characters);
-
+ 
+//function with for loop generating password
  generatePassword = function () {
     var charSetLength = characters.length;
     var password = "";
@@ -54,7 +53,7 @@ password = generatePassword();
 
   passwordText.value = password;
 
-// TODO: add ifs for passwordLength, lowerCaseLetters, upperCaseLetters, numbers, specialCharacters
+
 }
 
 // Add event listener to generate button
