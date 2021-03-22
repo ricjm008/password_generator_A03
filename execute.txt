@@ -1,0 +1,28 @@
+
+Script:
+How many characters would you like your password to be? (8-128)
+
+(checks character length)
+
+(if character length is within parameters, proceed to next question)
+(if not send error and ask again)
+
+Would you like to add lower-case letters?
+
+(boolean, as a button/tickbox/yesorno)
+
+(if yes add character string to randomizer and proceed)
+(if no do not add character strings to randomizer and proceed)
+
+Would you like to add upper-case letters?
+
+(yes or no)
+
+
+
+Would you like to add numbers?
+
+Would you like to add special characters? (!@#$%etc.)
+
+(show settings)
+
